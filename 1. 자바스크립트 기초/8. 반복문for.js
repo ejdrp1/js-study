@@ -1,5 +1,5 @@
 var i = 1; // 1. 제어변수 선언
-while (i <= 5;) { // 2. 조건식
+while (i <= 5) { // 2. 조건식
 
     console.log('hello'); // 3. 반복실행
 
@@ -21,3 +21,20 @@ for (var k = 1; k <= n; k++) {
     }
 }
 alert(resultMark);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
