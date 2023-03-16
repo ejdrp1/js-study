@@ -10,6 +10,9 @@
     시스템은 지속적으로 다른 문제를 출제하여 사용자가 0을 입력할 때까지
     답을 계속 입력받고 검증해줘야 한다.
 */
+var message = `~~~~~~~~ 난이도를 설정합니다 ~~~~~~~~~~~~
+    [1. 상 (1~100) | 2. 중 (1~50) | 3. 하 (1~20) ]`;
+var level = +prompt(message);
 
 
 // 문제 번호
@@ -19,9 +22,6 @@ var questionNumber = 1;
 var correntCount = 0,
     wrongCount = 0;
 
-var message = `~~~~~~~~ 난이도를 설정합니다 ~~~~~~~~~~~~
-    [1. 상 (1~100) | 2. 중 (1~50) | 3. 하 (1~20) ]`;
-var level = +prompt(message);
 
 // 난이도에 따른 숫자 최대값
 var maxNumber;
