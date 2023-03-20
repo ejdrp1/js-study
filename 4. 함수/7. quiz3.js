@@ -23,12 +23,12 @@ function calcBMI(height, weight) {
    } else {
       console.log('당신은 정상체중입니다.');
    }
-
    return bmi;
+
 }
 
 // 자리수 반올림 함수
-function round(number, digit){
+function round(number, digit) {
    // number: 5.7788
    // * 100 = 577.88
    // 반올림 = 578
@@ -37,12 +37,12 @@ function round(number, digit){
    // 2째자리까지 Math.round(number * 10 ** 2) / 10 ** 2
    // 3째자리까지 Math.round(number * 10 ** 3) / 10 ** 3
    // digit째자리까지 Math.round(number * 10 ** digit) / 10 ** digit
-   
+
    return Math.round(number * 10 ** digit) / 10 ** digit;
 }
 
 var h = 178.4,
-   w = 78.2;
+    w = 78.2;
 var myBmi = calcBMI(h, w);
 
 console.log(`키 -> ${h}cm, 체중 -> ${w}kg의 체질량지수는 ${round(myBmi, 2)}입니다.`);
