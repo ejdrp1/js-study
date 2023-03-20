@@ -16,13 +16,14 @@
     // 약수들을 저장할 배열
     var divisor = [];
 
-    for (var i = 0; i <= targetNumber; i++) {
+    for (var i = 1; i <= targetNumber; i++) {
       if (targetNumber % i === 0) {
         divisor.push(i);
       }
     }
 
     console.log(`${targetNumber}의 약수: [${divisor}]`);
+    
     return divisor.length;
 
   }

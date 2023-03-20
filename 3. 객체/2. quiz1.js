@@ -30,47 +30,39 @@ var userInfo = {
 
 
 // 회원목록 배열
-var userList = userInfo.userList;
+var uu = userInfo.userList;
 
-
-
-while (true) {
+while (true) { // 로그인을 성공할 때까지 반복
 
     // 계정 입력받기
-    var inputAccount = prompt('아이디를 입력하세요!');
-    // var inputAccount = 'kim1234';
+    var inputAccount = prompt(`아이디를 입력하세요!`);
 
     // 회원목록을 반복하여 입력한 계정명과 일치하는 객체를 탐색
     var foundUser = null; // 로그인 시도하는 회원의 정보객체
 
-    for (var user of userList) {
-        if (inputAccount === user.account) {
-            // console.log('회원가입했다!');
-            foundUser = user;
-            break;
+    for (var user of userList) { // user는 변수, userList에서 꺼낸 값을 user에 저장
+        if (inputAccount === user.account) { // 입력한 계정이 존재하는 계정이면
+            foundUser = user; // user의 값을 foundUser에 저장
+            break; // foundUser에 값이 저장되면 조건문에서 탈출
         }
     }
 
-    // foundUser에는 로그인시도하는 회원의 정보가 들어있다.
-    // 로그인시도회원이 잘못된 계정을 입력하면 null로 유지되어 있음.
-    // console.log(foundUser);
+    // foundUser에는 로그인을 시도하는 회원의 정보가 들어있다.
+    // 로그인을 시도하는 회원이 잘못된 계정을 입력하면 foundUser값이 null로 유지되어 있다.
 
-    if (foundUser !== null) {
-        // console.log('일단 회원가입은 했구나 너 ');
+    if (foundUser !== null) { // 회원가입은 되어 있는 상태
 
         // 비밀번호 검증
-        // 일단 써바바
-        var inputPassword = prompt('비밀번호를 입력하세요!');
+        var inputPassword = prompt(`비밀번호를 입력하세요!`);
 
-        if (inputPassword === foundUser.password) {
-            alert(`${foundUser.username}님 환영합니다~~!`);
-            break;
-        } else {
-            alert('비밀번호가 틀렸습니다.');
+        if (inputPassword === foundUser.password) { // 입력한 비밀번호가 존재하는 비밀번호와 같다면
+            alert(`${foundUser.username}님 환영합니다~~!`); // 로그인된 회원이름을 출력
+            break; // 로그인 성공 시 조건문에서 탈출
+        } else { // 입력한 비밀번호가 존재하지 않다면
+            alert(`비밀번호가 틀렸습니다.`); // 로그인 실패 시 출력
         }
 
-    } else {
-        alert('존재하지 않는 회원입니다.');
+    } else { // 회원가입이 되어 있지 않다면
+        alert(`존재하지 않는 회원입니다.`); // 회원가입이 되어 있지 않다면 출력
     }
-
 }
