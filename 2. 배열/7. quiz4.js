@@ -28,27 +28,28 @@ while (true) { // 게임 시작
     }
 
     // 실탄 배열
-    var gun=[0, 0, 0, 0, 0, 0];
+    var gun = [0, 0, 0, 0, 0, 0];
 
     // 실탄 입력
-    var bullet= +prompt(`실탄 개수 (1 ~ 5개)`);
+    var bullet = +prompt(`실탄 개수 (1 ~ 5개)`);
 
     // 실탄을 모두 소비하기 전까지 반복
-    while (bullet != 0){
+    while (bullet != 0) {
 
         // 실탄 배열안에 1부터 6까지의 난수 생성
         var gunIdx = Math.floor(Math.random() * 6);
-        
+
         // 실탄 배열 [gunIdx]에 난수 0이 나오면
         // 0이 나온 [gunIdx]에 1을 대입 후 bullet(입력한 실탄 개수) 1개 감소
-        if(gun[gunIdx]===0){
-            gun[gunIdx]=1;
+        if (gun[gunIdx] === 0) {
+            gun[gunIdx] = 1;
             bullet--;
         }
 
-        
-
     }
+
+    // 실탄이 모두 소진되거나, 최후의 1명이 생존하는 경우 게임이 종료됨
+    alert(`총을 받았습니다. ${player[gunIdx%player.length]}부터 시작합니다.`);
 
 
 
