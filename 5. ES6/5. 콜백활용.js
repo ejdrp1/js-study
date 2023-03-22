@@ -232,7 +232,10 @@ userList // [{5}, {5}, {5}, {5}]
     console.log(`[${info.name}]회원의 첫번째 취미는 [${info.firstHobby}]입니다.`);
   });
 
-
+  userList
+  .filter(user => user.address === '서울' && user.firstHobby === user.firstHobby[0])
+  .map(user => ({name: user.userName}))
+  .forEach(info => {console.log(`[${info.name}]회원의 첫번째 취미는 [${info.firstHobby}]입니다.`);});
 
 
 
