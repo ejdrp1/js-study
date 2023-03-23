@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,7 +58,6 @@
     </style>
 
 </head>
-
 <body>
 
     <div class="dropdown">
@@ -74,20 +72,27 @@
     </div>
 
     <script>
-        const $clickDropBtn = document.querySelector('div.dropdown');
-        const $dropContent = document.querySelector('div#drop-content');
 
-        function clickMe() {
-            if ($dropContent.style.display === 'none') {
-                $dropContent.style.display = null;
-            } else {
-                $dropContent.style.display = 'none';
+        // btn클래스의 속성값을 dropBtn에 저장
+        const $dropBtn = document.querySelector('.btn');
+        // div#drop-content의 속성값을 dropMenu에 저장
+        const $dropMenu = document.querySelector('div#drop-content');
+
+        function showDropMenu(){ // 함수가 호출되었을 때
+
+            // 처음부터 메뉴들이 안보인다고 가정
+            if($dropMenu.style.display === 'none') { // 메뉴들이 안보이면?
+                $dropMenu.style.display = null; // 메뉴들의 display 속성값을 null로 설정하여 보이게함
+            } else { // 메뉴들이 보이면?
+                $dropMenu.style.display = 'none'; // none로 설정하여 숨김
             }
         }
 
-        $clickDropBtn.onclick = clickMe;
+        // dropBtn을 클릭했을 때 showDropMenu 함수를 호출
+        $dropBtn.onclick = showDropMenu;
+
+
     </script>
-
+    
 </body>
-
 </html>

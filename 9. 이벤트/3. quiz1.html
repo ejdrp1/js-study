@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
+    
     <button id="hider">텍스트 숨기기!!</button>
 
     <div class="text">안녕하세요~~</div>
@@ -18,22 +16,30 @@
         //이벤트 핸들러를 구현하세요.
         //힌트) css의 display: none; 사용
 
-        const $textBtn = document.querySelector('button');
-        const $text = document.querySelector('.text');
+        // button#hider클래스의 속성값을 textBtn에 저장
+        const $textBtn = document.querySelector('button#hider');
+        // div.text 클래스의 속성값을 text에 저장
+        const $text = document.querySelector('div.text');
 
-
-        function showText() {
-            if ($text.style.display === 'none') {
-                $text.style.display = null;
-                $textBtn.textContent = '텍스트 숨기기!!';
-            } else {
-                $text.style.display = 'none';
-                $textBtn.textContent = '텍스트 보이기!!';
+        function showText() { // 함수가 호출되었을 때
+            
+            // 처음부터 메뉴들이 안보인다고 가정
+            if($text.style.display === 'none'){ // 메뉴들이 안보이면?
+                $text.style.display = null; // 메뉴들의 display 속성값을 null로 설정하여 보이게함
+                $textBtn.textContent = '텍스트 숨기기!!'; // textBtn의 텍스트를 수정
+            } else { // 메뉴들이 보이면?
+                $text.style.display = 'none'; // 메뉴들의 display 속성값을 none으로 설정하여 숨김
+                $textBtn.textContent = '텍스트 보이기!!'; // textBtn의 텍스트를 수정
             }
+
         }
+
+        // textBtn을 클릭했을 때 showText 함수를 호출함
         $textBtn.onclick = showText;
+
+
+
     </script>
 
 </body>
-
 </html>

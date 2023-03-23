@@ -205,7 +205,7 @@ while (true) {
             let finalTotal1 = total1(winScore1, drawScore1, loseScore1);
             let finalTotal2 = total2(winScore2, drawScore2, loseScore2);
 
-            if(finalTotal2 > finalTotal1) {
+            if (finalTotal2 > finalTotal1) {
                 changeBox = finalTotal1;
                 finalTotal1 = finalTotal2;
                 finalTotal2 = changeBox;
