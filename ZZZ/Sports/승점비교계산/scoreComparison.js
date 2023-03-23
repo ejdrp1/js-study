@@ -1,4 +1,4 @@
-outerr:while (true) {
+while (true) {
 
 
     alert(`[프리미어리그 BIG6 승점 비교 계산기]\n\n▶확인 / Enter키를 입력하면 다음 화면으로 넘어갑니다.◀`);
@@ -31,11 +31,12 @@ outerr:while (true) {
 
     while (true) {
 
-        let firstTeamRecord = prompt(`${firstTeam}의 전적 기록을 입력해주세요.\n\n▶확인 / Enter키를 입력하면 다음 화면으로 넘어갑니다.◀`);
+        let inputTeamRecord = 0;
+        inputTeamRecord = prompt(`${firstTeam}의 전적 기록을 입력해주세요.\n\n▶확인 / Enter키를 입력하면 다음 화면으로 넘어갑니다.◀`);
         firstScoreCal();
 
         let quit = prompt(`계속하기 : Enter\n종료 : ㅂ`);
-        if(`${quit}` === 'ㅂ'){
+        if (`${quit}` === 'ㅂ') {
             break;
         } else {
             continue;
@@ -179,7 +180,7 @@ outerr:while (true) {
 
                 return sum1;
             }
-            
+
             // 입력한 숭, 무, 패 총합
             let over2 = (winScore2 + drawScore2 + loseScore2);
 
@@ -200,8 +201,20 @@ outerr:while (true) {
 
                 return sum2;
             }
-            alert(`[${firstTeam}]의 전적 기록 : [${winScore1}]승 [${drawScore1}]무 [${loseScore1}]패\n총 승점 : [${total1(`${winScore1}`,`${drawScore1}`,`${loseScore1}`)}]점\n\n[${secondTeam}]의 전적 기록 : [${winScore2}]승 [${drawScore2}]무 [${loseScore2}]패\n총 승점 : [${total2(`${winScore2}`,`${drawScore2}`,`${loseScore2}`)}]점\n\n\n[${firstTeam}]의 승점이 [${secondTeam}]의 승점보다 [${total1(winScore1, drawScore1, loseScore1) - total2(winScore2, drawScore2, loseScore2)}]점 더 높습니다.`);
+            let changeBox = 0;
+            let finalTotal1 = total1(winScore1, drawScore1, loseScore1);
+            let finalTotal2 = total2(winScore2, drawScore2, loseScore2);
+
+            if(finalTotal2 > finalTotal1) {
+                changeBox = finalTotal1;
+                finalTotal1 = finalTotal2;
+                finalTotal2 = changeBox;
+                alert(`[${firstTeam}]의 전적 기록 : [${winScore1}]승 [${drawScore1}]무 [${loseScore1}]패\n총 승점 : [${total1(`${winScore1}`,`${drawScore1}`,`${loseScore1}`)}]점\n\n[${secondTeam}]의 전적 기록 : [${winScore2}]승 [${drawScore2}]무 [${loseScore2}]패\n총 승점 : [${total2(`${winScore2}`,`${drawScore2}`,`${loseScore2}`)}]점\n\n\n[${secondTeam}]의 승점이 [${firstTeam}]의 승점보다 [${total2(`${winScore2}`,`${drawScore2}`,`${loseScore2}`) - total1(`${winScore1}`,`${drawScore1}`,`${loseScore1}`)}]점 더 높습니다.`);
+            } else {
+                alert(`[${firstTeam}]의 전적 기록 : [${winScore1}]승 [${drawScore1}]무 [${loseScore1}]패\n총 승점 : [${total1(`${winScore1}`,`${drawScore1}`,`${loseScore1}`)}]점\n\n[${secondTeam}]의 전적 기록 : [${winScore2}]승 [${drawScore2}]무 [${loseScore2}]패\n총 승점 : [${total2(`${winScore2}`,`${drawScore2}`,`${loseScore2}`)}]점\n\n\n[${firstTeam}]의 승점이 [${secondTeam}]의 승점보다 [${total1(`${winScore1}`,`${drawScore1}`,`${loseScore1}`) - total2(`${winScore2}`,`${drawScore2}`,`${loseScore2}`)}]점 더 높습니다.`);
+            }
             break;
+
         }
 
     }

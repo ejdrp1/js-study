@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: red;
+        }
+
+        .green {
+            color: greenyellow;
+            background: green;
+        }
+
+        .blue {
+            color: aqua;
+            background: blue;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box green" style="font-weight: 700;">Hello</div>
+
+    <button id="add">클릭!</button>
+
+    <script>
+        const $box = document.querySelector('.box');
+
+        // 우선 순위 점수 매우 높음
+        $box.style.fontStyle = 'italic';
+        // $box.style.display = 'none';
+
+
+        // 클래스 조작
+        // $box.className = 'box blue'; // 사용 자제
+
+        $box.classList.add('circle'); // 기존 형태 유지되면서 새로운 속성 추가
+        $box.classList.add('aaa', 'bbb', 'ccc');
+
+        $box.classList.remove('green'); // green 속성 삭제
+        $box.classList.remove('aaa', 'ccc'); // aaa, ccc 속성 동시 삭제
+
+        $box.classList.add('green');
+        $box.classList.replace('green', 'blue'); // green 속성을 blue 속성으로 교체
+
+        // 클래스 존재 유무확인
+        console.log($box.classList.contains('box'));
+        console.log($box.classList.contains('apple'));
+
+        // toggle : 현재 해당클래스가 없으면 추가
+        //                            있으면 지움
+        $box.classList.toggle('circle'); // 삭제
+        $box.classList.toggle('circle'); // 추가
+
+
+        const $btn = document.getElementById('add');
+
+        $btn.onclick = e => {
+            // $box.classList.toggle('circle'); 
+
+            const CLASSNAME = 'circle'; 
+
+            if ($box.classList.contains(CLASSNAME)) {
+                $box.classList.remove(CLASSNAME);
+            } else {
+                $box.classList.add(CLASSNAME);
+            }
+        };
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

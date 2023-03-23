@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0 auto;
+        }
+        
+        .dropdown {
+            width: 100px;
+            margin: 20px auto;
+        }
+
+        .btn {
+            background: rgb(201, 71, 71);
+            border: 1px solid #000;
+            width: 130px;
+            height: 50px;
+
+            color: ivory;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        div#drop-content {
+            width: 140px;
+            height: 200px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            background: rgb(246, 246, 246);
+            margin-bottom: 3px;
+            width: 130px;
+            height: 50px;
+
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            line-height: 2.5;
+            font-size: 20px;
+        }
+
+        a:first-child {
+            margin-top: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="btn">Drop</button>
+        <div style="display: none;" id="drop-content">
+            <a href="#">Menu1</a>
+            <a href="#">Menu2</a>
+            <a href="#">Menu3</a>
+            <a href="#">Menu4</a>
+            <a href="#">Menu5</a>
+        </div>
+    </div>
+
+    <script>
+        const $clickDropBtn = document.querySelector('div.dropdown');
+        const $dropContent = document.querySelector('div#drop-content');
+
+        function clickMe() {
+            if ($dropContent.style.display === 'none') {
+                $dropContent.style.display = null;
+            } else {
+                $dropContent.style.display = 'none';
+            }
+        }
+
+        $clickDropBtn.onclick = clickMe;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul class="users">
+        <li data-user-number="4321" data-role="common">김철수</li>
+        <li data-user-number="9999" data-role="admin">박영희</li>
+    </ul>
+
+    <script>
+
+        const [$ul, $u2] = [...document.querySelector('.users').children];
+
+        const kimNumber = +$ul.dataset.userNumber;
+        console.log(kimNumber);
+        
+        const role = $u2.dataset.role;
+        console.log(role);
+
+        $ul.dataset.role = 'gold';
+
+        $ul.dataset.hahaHoho='하하호호';
+        delete $ul.dataset.role;
+
+    </script>
+
+
+
+
+</body>
+</html>
